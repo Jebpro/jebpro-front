@@ -65,8 +65,10 @@ export const Footer = styled.div`
   text-align: right;
 
   & * {
-    width: 4%;
-    height: 4%;
+    width: auto;
+    height: auto;
+    max-width: 50px;
+    max-height: 50px;
   }
 `;
 
