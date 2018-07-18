@@ -39,7 +39,6 @@ export const Button = styled.button.attrs({
   `}
   margin: 0.3em;
   padding: 0.3em;
-  width: 100%;
   font-size: 2em;
   background: transparent;
   border: 3px solid slateblue;

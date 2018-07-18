@@ -61,6 +61,7 @@ class Home extends PureComponent {
         <Footer>
           <a href="https://github.com/Jebpro/jebpro-front"><Image src={require("../images/github-logo.png")}/></a>
           <a href="https://discord.gg/NaYnYy8"><Image src={require("../images/discord-logo.png")}/></a>
+          <a href="https://open.spotify.com/user/mechlul/playlist/3QgqsgqJn8m55J3YPK6J38"><Image src={require("../images/spotify-logo.png")}/></a>
         </Footer>
       </div>
     )
