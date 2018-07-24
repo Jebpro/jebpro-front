@@ -1,14 +1,22 @@
 import styled from 'styled-components';
+import placeholder from "../images/placeholder.png";
+
+function GetImage(value) {
+  switch (value) {
+    case "news":
+    case "aboutme":
+    case "projects":
+    case "contact":
+      return placeholder;
+    default:
+      return null;
+  }
+}
 
 export const Title = styled.h1`
-  ${props => props.home ? `
-    font-size: 10em;
-    margin-top: 1em;
-    display: block;
-  ` : `
-    font-size: 5em;
-    display: block;
-  `}
+  font-size: 10em;
+  margin-top: 1em;
+  display: block;
   text-align: center;
 
   @media (max-width: 660px) {
@@ -18,40 +26,29 @@ export const Title = styled.h1`
 `;
 
 export const ButtonToolbar = styled.div`
-  ${props => props.home ? `
-    display: flex;
-    padding: 5em;
-  ` : `
-    display: flex;
-    padding: 1em;
-  `}
+  text-align: center;
+  padding: 2em;
   transition-duration: 0.4s;
   transition-timing-function: linear;
 `;
 
-export const Button = styled.button.attrs({
-  className: "col-md-3"
-})`
-  ${props => props.home ? `
-    color: white;
-  ` : `
-    color: black;
-  `}
-  margin: 0.3em;
-  padding: 0.3em;
+export const Button = styled.button`
+  margin: 1.5em;
   font-size: 2em;
-  background: transparent;
+  width: 150px;
+  height: 150px;
+  color: transparent;
+  background-image: url(${props => GetImage(props.value)});
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 3px solid slateblue;
-  border-radius: 45px;
-  transition-duration: 0.1s;
+  border-radius: 80px;
+  transition-duration: 0.2s;
   transition-timing-function: linear;
   &:hover {
+    background-image: none;
     background-color: rebeccapurple;
     border: 3px solid rebeccapurple;
-    color: white;
-  }
-  &:focus {
-    background-color: rebeccapurple;
     color: white;
   }
 `;
@@ -66,12 +63,8 @@ export const Footer = styled.div`
   & * {
     width: auto;
     height: auto;
+    margin: 2px;
     max-width: 50px;
     max-height: 50px;
   }
-`;
-
-export const Wrapper = styled.div`
-  transition-duration: 0.4s;
-  transition-timing-function: linear;
 `;

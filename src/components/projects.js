@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Title } from '../styles';
 
-const About = props => (
+const Projects = props => (
   <div className="col-md-12">
     <Title>Coming soon...</Title>
   </div>
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   null,
   mapDispatchToProps
-)(About)
+)(Projects)
