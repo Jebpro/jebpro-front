@@ -3,10 +3,10 @@ import placeholder from "../images/placeholder.png";
 
 function GetImage(value) {
   switch (value) {
-    case "news":
-    case "aboutme":
-    case "projects":
-    case "contact":
+    case "News":
+    case "About":
+    case "Projects":
+    case "Contact":
       return placeholder;
     default:
       return null;
@@ -107,7 +107,7 @@ export const Button = styled.button`
   width: 150px;
   height: 150px;
   color: transparent;
-  background-image: url(${props => GetImage(props.value)});
+  background-image: url(${props => GetImage(props.children[1])});
   background-size: cover;
   background-repeat: no-repeat;
   border: 3px solid slateblue;
