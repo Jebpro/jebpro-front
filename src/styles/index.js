@@ -114,6 +114,10 @@ export const Button = styled.button`
   border-radius: 80px;
   transition-duration: 0.2s;
   transition-timing-function: linear;
+
+  & * {
+    display: grid;
+  }
   &:hover {
     background-image: none;
     background-color: rebeccapurple;
