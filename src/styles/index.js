@@ -107,11 +107,15 @@ export const Button = styled.button`
   width: 150px;
   height: 150px;
   color: transparent;
-  background-image: url(${props => GetImage(props.children[1])});
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: none;
+  background-color: rebeccapurple;
+  border: 3px solid rebeccapurple;
+  color: white;
+  // background-image: url(${props => GetImage(props.children[1])});
+  // background-size: cover;
+  // background-repeat: no-repeat;
   border: 3px solid slateblue;
-  border-radius: 80px;
+  border-radius: 100px;
   transition-duration: 0.2s;
   transition-timing-function: linear;
 
@@ -119,10 +123,13 @@ export const Button = styled.button`
     display: grid;
   }
   &:hover {
-    background-image: none;
-    background-color: rebeccapurple;
-    border: 3px solid rebeccapurple;
-    color: white;
+    // background-image: none;
+    // background-color: rebeccapurple;
+    // border: 3px solid rebeccapurple;
+    // color: white;
+    width: 180px;
+    height: 180px;
+    margin: 0.95em;
   }
 `;
 
