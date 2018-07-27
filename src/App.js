@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { simpleAction } from './actions/simpleAction';
 import { Route, withRouter, NavLink } from 'react-router-dom';
 import { injectGlobal } from 'styled-components';
 import Home from './components/home';
@@ -35,13 +34,11 @@ class App extends Component {
           <NavLink to="/contact">Contact</NavLink>
         </NavContent>
       </NavBar>}
-      <div className="container-fluid">
-      <Route exact path="/" component={Home} />
-      <Route path="/news" component={News} />
-      <Route path="/aboutme" component={About} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/projects" component={Projects} />
-      </div>
+        <Route exact path="/" component={Home} />
+        <Route path="/news" component={News} />
+        <Route path="/aboutme" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/projects" component={Projects} />
 
       <Footer>
         <a href="https://github.com/Jebpro/jebpro-front" target="_blank" rel="noopener noreferrer"><Image src={require("./images/github-logo.png")}/></a>
@@ -70,8 +67,4 @@ const mapStateToProps = state => ({
  ...state
 })
 
-const mapDispatchToProps = dispatch => ({
- simpleAction: () => dispatch(simpleAction())
-})
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps)(App));

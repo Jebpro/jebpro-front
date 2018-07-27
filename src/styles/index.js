@@ -27,9 +27,8 @@ export const Title = styled.h1`
 
 export const HeaderTitle = styled.h1`
   font-size: 5em;
-  margin-top: 1.5em;
   display: block;
-  text-align: left;
+  text-align: center;
 
   @media (max-width: 660px) {
     width: 100%;
@@ -52,18 +51,31 @@ export const ContentBlock = styled.div`
 
 export const ContentTitle = styled.div`
   background-color: rgba(102, 51, 153, 0.9);
-  padding: 5px;
-  flex: 0.2;
+  padding-bottom: 15px;
+  flex: 0.15;
   z-index: 1;
   overflow: hidden;
 
   & h2 {
-    font-size: 2.5em;
+    font-size: 2em;
+    padding-left: 10px;
     color: white;
+
+    &:after {
+      content: "(Hover for quick read)";
+      padding: inherit;
+      font-size: 0.7em;
+    }
   }
 
   &:hover {
     flex: 1;
+
+    & h2 {
+      &:after {
+        content: none;
+      }
+    }
 
     & p {
       display: inherit;
@@ -82,10 +94,11 @@ export const ContentTitle = styled.div`
 
 export const ContentImage = styled.div`
   background-image: url(${props => props.src});
+  background-color: #262626;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  flex: 0.8;
+  flex: 0.85;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -134,17 +147,16 @@ export const Button = styled.button`
 `;
 
 export const NavBar = styled.div`
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: #262626;
-  z-index: 1;
+  z-index: 10;
   display: flex;
   overflow: hidden;
 
   & * {
-    font-size: 1.6em;
+    font-size: 1.2em;
     color: snow;
   }
 `;
@@ -155,6 +167,7 @@ export const NavIndex = styled.div`
 
   a {
     color: white;
+    font-size: 1.6em;
 
     &:focus {
       text-decoration: none;
@@ -199,7 +212,7 @@ export const Footer = styled.div`
   right: 0;
   text-align: right;
   background-color: snow;
-  z-index: 1;
+  z-index: 10;
 
   & * {
     width: auto;
